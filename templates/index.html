@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h2 class="mb-4">Dashboard</h2>
+
+<div class="row">
+
+    <div class="col-md-4">
+        <div class="card text-white bg-primary shadow">
+            <div class="card-body">
+                <h5>Total Students</h5>
+                <h1>{{ total_students }}</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card text-white bg-success shadow">
+            <div class="card-body">
+                <h5>Total Attendance Records</h5>
+                <h1>{{ total_attendance }}</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card text-white bg-danger shadow">
+            <div class="card-body">
+                <h5>Total Tasks</h5>
+                <h1>{{ total_tasks }}</h1>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

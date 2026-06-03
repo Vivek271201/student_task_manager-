@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h2>Mark Attendance</h2>
+
+<form method="POST">
+
+<div class="row">
+
+<div class="col-md-4 mb-3">
+
+<label>Student</label>
+
+<select
+name="student_id"
+class="form-control"
+required>
+
+<option value="">
+Select Student
+</option>
+
+{% for student in students %}
+
+<option value="{{ student.student_id }}">
+
+{{ student.first_name }}
+{{ student.last_name }}
+
+</option>
+
+{% endfor %}
+
+</select>
+
+</div>
+
+<div class="col-md-4 mb-3">
+
+<label>Date</label>
+
+<input
+type="date"
+name="attendance_date"
+class="form-control"
+required>
+
+</div>
+
+<div class="col-md-4 mb-3">
+
+<label>Status</label>
+
+<select
+name="status"
+class="form-control">
+
+<option value="Present">
+Present
+</option>
+
+<option value="Absent">
+Absent
+</option>
+
+</select>
+
+</div>
+
+</div>
+
+<button class="btn btn-success">
+Save Attendance
+</button>
+
+</form>
+
+{% endblock %}

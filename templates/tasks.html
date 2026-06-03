@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="d-flex justify-content-between">
+
+<h2>Tasks</h2>
+
+<a href="{{ url_for('add_task') }}"
+class="btn btn-primary">
+Add Task
+</a>
+
+</div>
+
+<table class="table table-bordered mt-4">
+
+<thead>
+
+<tr>
+<th>ID</th>
+<th>Task Name</th>
+<th>Description</th>
+<th>Maximum Marks</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+{% for task in tasks %}
+
+<tr>
+
+<td>{{ task.task_id }}</td>
+
+<td>{{ task.task_name }}</td>
+
+<td>{{ task.task_description }}</td>
+
+<td>{{ task.maximum_marks }}</td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+{% endblock %}

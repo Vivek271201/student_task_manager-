@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="d-flex justify-content-between">
+
+<h2>Attendance Report</h2>
+
+<a href="{{ url_for('attendance') }}"
+class="btn btn-primary">
+Mark Attendance
+</a>
+
+</div>
+
+<table class="table table-bordered mt-4">
+
+<thead>
+
+<tr>
+
+<th>ID</th>
+<th>Student Name</th>
+<th>Date</th>
+<th>Status</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+{% for row in records %}
+
+<tr>
+
+<td>
+{{ row.attendance_id }}
+</td>
+
+<td>
+
+{{ row.first_name }}
+{{ row.last_name }}
+
+</td>
+
+<td>
+{{ row.attendance_date }}
+</td>
+
+<td>
+{{ row.status }}
+</td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+{% endblock %}

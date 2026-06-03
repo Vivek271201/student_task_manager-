@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h2>Assign Task</h2>
+
+<form method="POST">
+
+<div class="mb-3">
+
+<label>Student</label>
+
+<select
+name="student_id"
+class="form-control"
+required>
+
+{% for student in students %}
+
+<option value="{{ student.student_id }}">
+
+{{ student.first_name }}
+{{ student.last_name }}
+
+</option>
+
+{% endfor %}
+
+</select>
+
+</div>
+
+<div class="mb-3">
+
+<label>Task</label>
+
+<select
+name="task_id"
+class="form-control"
+required>
+
+{% for task in tasks %}
+
+<option value="{{ task.task_id }}">
+{{ task.task_name }}
+</option>
+
+{% endfor %}
+
+</select>
+
+</div>
+
+<button class="btn btn-success">
+Assign Task
+</button>
+
+</form>
+
+{% endblock %}

@@ -1,0 +1,18 @@
+body{
+    background-color:#f5f5f5;
+}
+
+.card{
+    border-radius:12px;
+}
+
+.card-header{
+    font-weight:bold;
+}
+.card{
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
