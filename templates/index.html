@@ -1,38 +1,67 @@
-{% extends "layout.html" %}
+{% extends 'layout.html' %}
 
 {% block content %}
 
-<h2 class="mb-4">Dashboard</h2>
+<h2>Dashboard</h2>
 
-<div class="row">
+<!-- Welcome Modal -->
+<div class="modal fade"
+     id="welcomeModal"
+     tabindex="-1">
 
-    <div class="col-md-4">
-        <div class="card text-white bg-primary shadow">
-            <div class="card-body">
-                <h5>Total Students</h5>
-                <h1>{{ total_students }}</h1>
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title">
+                    Welcome 👋
+                </h5>
+
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal">
+                </button>
+
             </div>
-        </div>
-    </div>
 
-    <div class="col-md-4">
-        <div class="card text-white bg-success shadow">
-            <div class="card-body">
-                <h5>Total Attendance Records</h5>
-                <h1>{{ total_attendance }}</h1>
-            </div>
-        </div>
-    </div>
+            <div class="modal-body text-center">
 
-    <div class="col-md-4">
-        <div class="card text-white bg-danger shadow">
-            <div class="card-body">
-                <h5>Total Tasks</h5>
-                <h1>{{ total_tasks }}</h1>
+                <img src="{{ url_for('static', filename='images/my photo.jpg') }}"
+                     width="150"
+                     class="rounded-circle shadow mb-3">
+
+                <h3>Hello 👋</h3>
+
+                <p>
+                    I, <strong>Vivek Sutar</strong>,
+                    proudly created this website.
+                </p>
+
             </div>
+
         </div>
+
     </div>
 
 </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    if (!sessionStorage.getItem("welcomeShown")) {
+
+        var modal = new bootstrap.Modal(
+            document.getElementById("welcomeModal")
+        );
+
+        modal.show();
+
+        sessionStorage.setItem("welcomeShown", "true");
+    }
+
+});
+</script>
 
 {% endblock %}
